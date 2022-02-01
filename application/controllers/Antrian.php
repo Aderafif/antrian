@@ -18,6 +18,21 @@ class Antrian extends CI_Controller
         $data['title'] = 'form';
         $data['antrian'] = $this->antrian_model->getAntrian() + 1;
         $data['faskes'] = $this->antrian_model->getFaskes();
+        $data['ts'] = $this->antrian_model->timer()->ts;
+        $var = strtotime($data['ts']);
+        $date_now = date('Y-m-d');
+        $date = strtotime($date_now);
+        
+        if ( $var < $date ){
+            $this->antrian_model->deleteTimestamp();
+            $this->antrian_model->makeTimestamp();
+            echo('Terhapus');
+        } else {
+            echo('BELUM SAATNYA');
+        }
+        // var_dump($data['ts']);
+        // var_dump($var);
+        die;
         $this->load->view('form', $data);
     }
 
@@ -32,7 +47,7 @@ class Antrian extends CI_Controller
         // die;
         $antrian = $this->antrian_model->getAntrian();
         if ($this->form_validation->run() == true) {
-            if ($antrian < 15) {
+            if ($antrian < 2) {
                 $data['nik'] = $this->input->post('nik');
                 $data['nama_pasien'] = $this->input->post('Nama');
                 $data['alamat'] = $this->input->post('Alamat');

@@ -25,6 +25,20 @@ class Antrian_model extends CI_Model
  {
     return $this->db->insert($this->table, $data);
  }
+ public function timer() {
+     $sql = 'SELECT * FROM sessioninfo';
+     return $this->db->query($sql)->row();
+ }
+
+ public function deleteTimestamp() {
+     $sql = 'DELETE FROM sessioninfo';
+     return $this->db->query($sql);
+ }
+
+ public function makeTimestamp() {
+     $sql = "INSERT INTO SessionInfo (session, state, ts) VALUES ('test', '1', current_timestamp());";
+     return $this->db->query($sql);
+ }
 
 //  public function limit()
 //  {
@@ -35,4 +49,5 @@ class Antrian_model extends CI_Model
 //         return 0;
 //    } 
 //  }
+
 }
