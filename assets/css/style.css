@@ -1,0 +1,44 @@
+.bg-antrian{
+    background: linear-gradient(25deg, #015fff, #4c94ed, #50c9d8, #20ffc0);
+    width: 100%;
+    height: 100vh;
+}
+
+.antrian{
+     padding: 50px 0;
+     justify-content: space-evenly;
+    
+}
+
+.antrian .jumlah{
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: auto;
+    height: fit-content;
+    padding: 15px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.antrian .jumlah {
+    font-size: 86px;
+}
+
+.antrian .form{
+    background-color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: auto;
+    height: auto;
+    padding: 15px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.antrian .form .faskes{
+    display: flex;
+    justify-content: space-between;
+}
